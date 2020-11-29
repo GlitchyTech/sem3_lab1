@@ -7,10 +7,8 @@
 #include "ArraySequence.hpp"
 #include "ListSequence.hpp"
 #include "Sort.hpp"
+#include "Utils.hpp"
 
-int cmpB(int a, int b) { return a - b; }
-
-int cmpL(int a, int b) { return b - a; }
 
 void TestQuickSort(){
     ArraySequence<int> arr1 = {-454, 4, 45, 87, 934, 0, -4, 3849};

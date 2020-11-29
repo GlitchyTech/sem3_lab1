@@ -13,6 +13,10 @@ std::string const START_BIGGER_THAN_END = "ERROR : Start bigger than end \n";
 size_t const MAX_STRING_SIZE = 1000;
 
 
+int cmpB(int a, int b) { return a - b; }
+
+int cmpL(int a, int b) { return b - a; }
+
 // **** Error Handling ****
 
 void IsExceptionOutOfRange(size_t i, size_t size){

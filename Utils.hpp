@@ -16,6 +16,8 @@ but I don't know how to use him so this is much easier
 #define INFO(msg) std::cout << (#msg) << " = " << (msg) <<  std::endl;
 #define PRINT(msg) std::cout << (msg) << std::endl;
 
+int cmpB(int, int);
+int cmpL(int, int);
 
 // **** TypeDefs ****
 

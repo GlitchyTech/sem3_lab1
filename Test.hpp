@@ -8,8 +8,6 @@
 #include "ArraySequence.hpp"
 #include "ListSequence.hpp"
 
-int cmpB(int, int);
-int cmpL(int, int);
 void TestQuickSort();
 void TestBubbleSort();
 void TestShakerSort();

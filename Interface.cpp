@@ -8,7 +8,7 @@
 #include "ArraySequence.hpp"
 #include "ListSequence.hpp"
 #include "Sort.hpp"
-#include "Test.hpp"
+#include "Utils.hpp"
 
 typedef enum {ARRAY, LIST} Type;
 typedef enum {QUICK, BUBBLE, SHAKER} Sorting;
