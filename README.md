@@ -1,1 +1,2 @@
-# sem3_lab1
+# Third semester. Course "Programming : Algorithms and Data Structures". First lab on C++.
+
