@@ -43,6 +43,15 @@ public:
     ~List();
 
 
+    // **** Comparison Operators ****
+
+    template<typename TT>
+    friend bool operator==(List<TT> const &, List<TT> const &);
+
+    template<typename TT>
+    friend bool operator!=(List<TT> const &, List<TT> const &);
+
+
     // **** Getters ****
 
     size_t GetSize() const;

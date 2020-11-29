@@ -16,6 +16,16 @@ DynamicArray<T>::DynamicArray()
     : size_(0), capacity_(DEFAULT_CAPACITY), data_(nullptr) {}
 
 template<typename T>
+DynamicArray<T>::DynamicArray(std::initializer_list<T> iList)
+    : size_(iList.size()), capacity_(std::max(iList.size() + DEFAULT_CAPACITY, iList.size() * 2)), data_(new T[capacity_])
+    {
+    size_t j = 0;
+    for (auto elem : iList){
+        data_[j++] = elem;
+    }
+}
+
+template<typename T>
 DynamicArray<T>::DynamicArray(size_t size)
     : size_(size), capacity_(std::max(size_ + DEFAULT_CAPACITY, size_ * 2)), data_(new T[capacity_]) {
         IsExceptionLength(size_);
@@ -205,6 +215,7 @@ void DynamicArray<T>::InsertAt(size_t i, T data) {
     IsExceptionOutOfRange(i, GetSize() + 1);
 
     if (GetSize() + 1 > GetCapacity()) ExpandCapacity();
+    if (GetData() == nullptr) SetData(new T[GetCapacity()]);
 
     SetSize(GetSize() + 1);
     T store = data;

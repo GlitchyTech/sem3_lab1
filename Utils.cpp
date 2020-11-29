@@ -5,7 +5,7 @@
 #include "Utils.hpp"
 
 
-std::string const INDEX_OUT_OF_RANGE = "ERROR: Index out of range asdfasf \n";
+std::string const INDEX_OUT_OF_RANGE = "ERROR: Index out of range \n";
 std::string const NEGATIVE_SIZE = "ERROR : Size can't be negative \n";
 std::string const EMPTY_CONTAINER = "ERROR : Empty container \n";
 std::string const START_BIGGER_THAN_END = "ERROR : Start bigger than end \n";

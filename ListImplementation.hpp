@@ -47,6 +47,28 @@ List<T>::List(List<T> const &rList)
 
 // **** Operators ****
 
+
+// **** Comparison Operators ****
+
+template<typename T>
+bool operator==(List<T> const &rListA, List<T> const &rListB){
+    size_t size1 = rListA.GetSize();
+    size_t size2 = rListB.GetSize();
+
+    if (size1 != size2) return false;
+
+    for (size_t i = 0; i < size1; ++i){
+        if (rListA[i] != rListB[i]) return false;
+    }
+
+    return true;
+}
+
+template<typename T>
+bool operator!=(List<T> const &rListA, List<T> const &rListB){
+    return !(rListA == rListB);
+}
+
 template<typename T>
 List<T> operator+(List<T> a, List<T> b){
     List<T> *pNew_list = a.GetSubList(0, a.GetSize());
@@ -110,24 +132,6 @@ T List<T>::operator[](size_t i) const { return GetElementData(i); }
 template<typename T>
 T & List<T>::operator[](size_t i) { return GetElementData(i); }
 
-
-// **** Comparison ****
-
-template<typename T>
-bool operator==(List<T> const &rListA, List<T> const &rListB){
-    if (rListA.GetSize() != rListB.GetSize()) return false;
-
-    for (size_t i = 0; i < rListA.GetSize(); ++i){
-        if (rListA[i] != rListB[i]) return false;
-    }
-
-    return true;
-}
-
-template<typename T>
-bool operator!=(List<T> const &rListA, List<T> const &rListB){
-    return !(rListA == rListB);
-}
 
 // **** Destructor ****
 

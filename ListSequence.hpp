@@ -28,6 +28,14 @@ public:
     ~ListSequence() = default;
 
 
+    // **** Comparison Operators ****
+
+    template<typename TT>
+    friend bool operator==(ListSequence<TT> const &, ListSequence<TT> const &);
+
+    template<typename TT>
+    friend bool operator!=(ListSequence<TT> const &, ListSequence<TT> const &);
+
     // **** Operators ****
 
     template<typename TT>
@@ -58,6 +66,7 @@ public:
     // **** Setters ****
 
     void SetSize(size_t);
+    void Set(size_t, T);
 
 
     // **** Modifiers ****
@@ -68,8 +77,6 @@ public:
     void PopFirst();
     void EraseAt(size_t);
     void PopBack();
-    ListSequence<T> * Concatenation(ISequence<T> *);
-
 
 private:
 

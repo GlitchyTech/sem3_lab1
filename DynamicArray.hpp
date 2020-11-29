@@ -15,6 +15,7 @@ public:
     // **** Constructors ****
 
     DynamicArray();
+    DynamicArray(std::initializer_list<T>);
     explicit DynamicArray(size_t);
     DynamicArray(T *, size_t);
 

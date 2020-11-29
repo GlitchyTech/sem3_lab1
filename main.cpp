@@ -1,6 +1,9 @@
-#include <iostream>
+#include "Test.hpp"
+#include "Interface.hpp"
 
 int main(int argc, char *argv[]) {
-    std::cout << "hi Vasya!";
+    Test();
+    Interface();
+
     return 0;
 }

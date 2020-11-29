@@ -14,6 +14,7 @@ public:
     // **** Constructor ****
 
     ArraySequence();
+    ArraySequence(std::initializer_list<T>);
     explicit ArraySequence(size_t);
     ArraySequence(T *, size_t);
     ArraySequence(DynamicArray<T> const &);
@@ -25,7 +26,7 @@ public:
 
     // **** Destructor ****
 
-    ~ArraySequence();
+    ~ArraySequence() = default;
 
 
     // **** Comparison Operators ****
@@ -64,7 +65,6 @@ public:
     T & GetElementData(size_t);
     size_t GetSize() const;
     size_t GetCapacity() const;
-    ArraySequence<T> * GetSubSequence(size_t, size_t) const;
 
 
     // **** Setters ****
@@ -74,6 +74,7 @@ public:
     void SetCapacity(size_t);
     void SetData(T *);
     void SetElement(size_t, T);
+    void Set(size_t, T);
 
 
     // **** Modifiers ****
@@ -84,12 +85,6 @@ public:
     void PopFirst();
     void EraseAt(size_t);
     void PopBack();
-    ArraySequence<T> * Concatenation(ISequence<T> *);
-
-
-    // **** Utils ****
-
-    //
 
 
 private:

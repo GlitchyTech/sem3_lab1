@@ -103,6 +103,9 @@ size_t ListSequence<T>::GetSize() const { return GetList().GetSize(); }
 template<typename T>
 void ListSequence<T>::SetSize(size_t newSize) { GetList().SetSize(newSize); }
 
+template<typename T>
+void ListSequence<T>::Set(size_t i, T value) { GetElementData(i) = value; }
+
 
 // **** Modifiers ****
 
@@ -123,8 +126,4 @@ void ListSequence<T>::EraseAt(size_t i) { GetList().EraseAt(i); }
 
 template<typename T>
 void ListSequence<T>::PopBack() { GetList().PopBack(); }
-
-template<typename T>
-ListSequence<T> * ListSequence<T>::Concatenation(ISequence<T> *pList) { return new ListSequence<T>; }
-
 

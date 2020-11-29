@@ -11,6 +11,10 @@ ArraySequence<T>::ArraySequence()
     : array_() {}
 
 template<typename T>
+ArraySequence<T>::ArraySequence(std::initializer_list<T> iList)
+    : array_(iList) {}
+
+template<typename T>
 ArraySequence<T>::ArraySequence(size_t size)
     : array_(size) {}
 
@@ -28,12 +32,6 @@ ArraySequence<T>::ArraySequence(DynamicArray<T> const &rDArray)
 template<typename T>
 ArraySequence<T>::ArraySequence(ArraySequence<T> const &rArray)
     : array_(rArray.GetArray()) {}
-
-
-// **** Destructor ****
-
-template<typename T>
-ArraySequence<T>::~ArraySequence() = default;
 
 
 // **** Comparison Operators ****
@@ -107,11 +105,6 @@ size_t ArraySequence<T>::GetSize() const { return GetArray().GetSize(); }
 template<typename T>
 size_t ArraySequence<T>::GetCapacity() const { return GetArray().GetCapacity(); }
 
-template<typename T>
-ArraySequence<T> * ArraySequence<T>::GetSubSequence(size_t start, size_t end) const {
-    return new ArraySequence<T>;
-}
-
 
 // **** Setters ****
 
@@ -129,6 +122,9 @@ void ArraySequence<T>::SetData(T *pNewData) { GetArray().SetData(pNewData); }
 
 template<typename T>
 void ArraySequence<T>::SetElement(size_t i, T data) { GetArray().SetElement(i, data); }
+
+template<typename T>
+void ArraySequence<T>::Set(size_t i, T data) { SetElement(i, data); }
 
 
 // **** Modifiers ****
@@ -152,11 +148,3 @@ void ArraySequence<T>::EraseAt(size_t i) {
 
 template<typename T>
 void ArraySequence<T>::PopBack() { GetArray().PopBack(); }
-
-template<typename T>
-ArraySequence<T> * ArraySequence<T>::Concatenation(ISequence<T> *pArray) { return new ArraySequence<T>; }
-
-
-// **** Utils ****
-
-//
